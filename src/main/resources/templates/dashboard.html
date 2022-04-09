@@ -7,16 +7,20 @@
 </head>
 <body>
 
-<form method="get" action="response">
+<form method="POST" action="showRows">
 
-    <select>
+    <select  name="column">
         <option value="0">select option</option>
         <option th:each="column : ${columns}" th:value="${column}" th:text="${column}"></option>
     </select>
 
+    <select  name="searchType">
+        <option value="0">select search type</option>
+        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).UNIQUE}" th:text="unique"></option>
+        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).COMMON}" th:text="common"></option>
+    </select>
+
     <button type="submit">wyslij</button>
-
-
 </form>
 
 

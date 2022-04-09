@@ -14,13 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
 public class RekrutacjaSunCodeApplication{
-
-
-
     public static void main(String[] args) {
         SpringApplication.run(RekrutacjaSunCodeApplication.class, args);
     }
-
-
-
 }
