@@ -5,31 +5,36 @@
         <meta charset="UTF-8">
         <title>Database table</title>
         <script type="text/javascript" src="js/ajaxRequest.js" ></script>
+        <link type="text/css" rel="stylesheet" href="css/form.css">
+
     </head>
 <body>
 
+<div class="mainContainer">
+    <form onsubmit="loadTable(); return false">
+        <div class="select">
+            <select name="searchType" id="searchType" required>
+                <option value="">select search type</option>
+                <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).UNIQUE}" th:text="unique"></option>
+                <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).COMMON}" th:text="common"></option>
+                <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).ALL}" th:text="full"></option>
+            </select>
+        </div>
 
-<form onsubmit="loadTable(); return false">
+        <div class="select">
+            <select name="column" id="column" required>
+                <option value="">select option</option>
+                <option th:each="column : ${columns}" th:value="${column}" th:text="${column}"></option>
+            </select>
+        </div>
 
-    <select  name="searchType" id="searchType" required>
-        <option value="">select search type</option>
-        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).UNIQUE}" th:text="unique"></option>
-        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).COMMON}" th:text="common"></option>
-        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).ALL}" th:text="full"></option>
-    </select>
+        <button type="submit">Get rows</button>
+    </form>
 
-    <select  name="column" id="column" required>
-        <option value="">select option</option>
-        <option th:each="column : ${columns}" th:value="${column}" th:text="${column}"></option>
-    </select>
-
-    <button type="submit">Get rows</button>
-</form>
-
-
-<div id="table">
-
+    <div class="content">
+    </div>
 </div>
+
 
 </body>
 </html>

@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+body{
+    background-color: #383333;
+    height: 100%;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 10px;
+}
+
+.content{
+    display: flex;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    display: table;
+    padding: 20px 20px 20px 20px;
+}
+
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    border: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #787b86;
+    padding: 10px;
+}
+
+
+h1 {
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+}
+
+h2 {
+    font-size:1em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+}
+
+.container td{
+    text-align: right;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid;
+    border-color: #00133d;
+    height: 40px;
+}
+
+.container tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+.container tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.container tr:nth-child(odd):hover, .container tr:nth-child(even):hover {
+    background-color: #3d3f44;
+}
+
+
+.container th {
+    background-color: #131722;
+    border: 1px solid #787b86;
+    height: 56px;
+}
+
+.container td:first-child {
+    font-size: 20px;
+    text-align: left;
+    color: #00d9ff; }
+
+:root {
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+}
+
+select {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding-left: 20px;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+}
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+.select:hover::after {
+    color: #f39c12;
+}
+
+
+button {
+   align-items: center;
+    background-color: var(--darkgray);
+   border-radius: 8px;
+   border-width: 0;
+   color: #fff;
+   cursor: pointer;
+   display: inline-flex;
+   flex-direction: column;
+   font-size: 18px;
+   height: 52px;
+   justify-content: center;
+   line-height: 1;
+   margin: 0;
+   outline: none;
+   overflow: hidden;
+   padding: 0 32px;
+   text-align: center;
+
+}
+
+
+
