@@ -30,6 +30,8 @@ public class DataServiceImpl implements DataService{
         String query = null;
 
         switch (searchType){
+            case ALL:
+                return findAll();
             case UNIQUE:
                 query = "FROM Data WHERE " + column + " IN (SELECT " + column + " FROM Data GROUP BY " + column + " HAVING COUNT(*) = 1)";
                 break;
@@ -47,11 +49,5 @@ public class DataServiceImpl implements DataService{
     public List<Data> findAll() {
         return columnInterface.findAll();
     }
-
-    @Override
-    public Data getById(Long id) {
-        return columnInterface.getById(id);
-    }
-
 
 }

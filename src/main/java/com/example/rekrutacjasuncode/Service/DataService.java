@@ -8,5 +8,4 @@ import java.util.List;
 public interface DataService {
     List<Data> getRows(String column, SearchType searchType);
     List<Data> findAll();
-    Data getById(Long id);
 }

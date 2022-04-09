@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Database table</title>
+        <script type="text/javascript" src="js/ajaxRequest.js" ></script>
+    </head>
 <body>
 
-<form method="POST" action="showRows">
 
-    <select  name="column">
-        <option value="0">select option</option>
+<form onsubmit="loadTable(); return false">
+
+    <select  name="searchType" id="searchType" required>
+        <option value="">select search type</option>
+        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).UNIQUE}" th:text="unique"></option>
+        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).COMMON}" th:text="common"></option>
+        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).ALL}" th:text="full"></option>
+    </select>
+
+    <select  name="column" id="column" required>
+        <option value="">select option</option>
         <option th:each="column : ${columns}" th:value="${column}" th:text="${column}"></option>
     </select>
 
-    <select  name="searchType">
-        <option value="0">select search type</option>
-        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).UNIQUE}" th:text="unique"></option>
-        <option th:value="${T(com.example.rekrutacjasuncode.Dao.SearchType).COMMON}" th:text="common"></option>
-    </select>
-
-    <button type="submit">wyslij</button>
+    <button type="submit">Get rows</button>
 </form>
 
+
+<div id="table">
+
+</div>
 
 </body>
 </html>
